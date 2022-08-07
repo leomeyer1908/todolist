@@ -2,6 +2,18 @@
 
 using namespace std;
 
+void displayTodoList() {
+
+}
+
+void addTask() {
+
+}
+
+void removeTask() {
+    
+}
+
 void displayMenu() {
     int option;
     while (true) {
@@ -12,7 +24,16 @@ void displayMenu() {
         cout << "4) Exit\n";
         cout << "Enter option: ";
         cin >> option;
-        if (option == "4")
+        if (option == 1) {
+            displayTodoList();
+        }
+        else if (option == 2) {
+            addTask();
+        }
+        else if (option == 3) {
+            removeTask();
+        }
+        else if (option == 4)
             break;
     }
 }

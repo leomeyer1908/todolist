@@ -48,4 +48,45 @@ void LinkedList<T>::insert(int index, T entry)
 }
 
 template <typename T>
-void LinkedList<T>::remove(int index, T entry)
+void LinkedList<T>::remove(int index)
+{
+    Node<T> *temp = m_head;
+
+    if (index < 1 || index > m_length + 1)
+        throw(runtime_error("Cannot remove; invalid index\n"));
+
+    else if (index == 1)
+    {
+        m_head->setNext(m_head->getNext());
+        delete temp->getNext();
+        m_lenght--;
+    }
+
+    else
+    {
+        for (int i = 0; i < index - 1; i++)
+            temp = temp->getNext();
+
+        Node<T> *temp2 = temp->getNext();
+        temp2 = temp2->getNext();
+        delete temp->getNext();
+        temp->setNext(temp2->getNext());
+        m_lenght--;
+    }
+}
+
+template <typename T>
+void LinkedList<T>::replace(int index, T entry)
+{
+    Node<T> *temp = m_head;
+
+    if (index < 1 || index > m_length + 1)
+        throw(runtime_error("Cannot remove; invalid index\n"));
+    else
+    {
+        for (int i = 0; i < index; i++)
+            temp = temp->getNext();
+
+        temp->setEntry(entry);
+    }
+}

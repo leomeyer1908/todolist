@@ -1,20 +1,20 @@
 #include <iostream>
+#include <string>
 #include "LinkedList.h"
 
 using namespace std;
 
-template <typename T>
 class Executive
 {
 private:
-    LinkedList<T> list;
+    LinkedList<string> list;
 
 public:
     Executive();
     ~Executive();
     void menue();
-    void addTask(T entry);
-    void removeTask(int index);
+    void addTask();
+    void removeTask();
     void DisplayTasks();
     void run();
 };

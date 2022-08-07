@@ -23,6 +23,6 @@ public:
 
     Node<T> *getNext();
 
-    void setNext(Node<T> *next)
+    void setNext(Node<T> *next);
 };
 #endif

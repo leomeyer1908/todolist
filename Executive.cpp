@@ -4,29 +4,64 @@
 
 using namespace std;
 
-template <typename T>
-void Executive<T>::menue()
+Executive::Executive()
 {
-    cout << "TO DO LIST \n";
-    cout << "Add a Task \nRemove Task\nDisplay Tasks\n";
 }
 
-template <typename T>
-void Executive<T>::addTask(T entry)
+Executive::~Executive()
+{
+    list.clear();
+}
+
+void Executive::menue()
+{
+    cout << "TO DO LIST \n";
+    cout << "1)Add a Task \n2)Remove Task\n3)Display Tasks\n Exit\n";
+}
+
+void Executive::addTask()
 {
     string task;
     cout << "Task : ";
-    cin >> task >> endl;
+    cin >> task; // user inputs a task
 
-    list.insert(1, task);
+    list.insert(1, task); // it gets added to the linkedlist
 }
 
-template <typename T>
-void Executive<T>::removeTask(int index)
+void Executive::removeTask()
 {
+    DisplayTasks(); // it shows all the tasks
     int index = 0;
     cout << "Enter index: ";
-    cin >> index >> endl;
+    cin >> index;
 
     list.remove(index);
+}
+
+void Executive::DisplayTasks()
+{
+    for (int i = 0; i < list.m_lenght; i++)
+    {
+        cout << list.getEntry(i) << endl;
+    }
+}
+
+void Executive::run()
+{
+    int userChoice = 0;
+    menue();
+
+    while (userChoice != 4)
+    {
+        cout << "Enter a Choice: ";
+        cin >> userChoice;
+        if (userChoice == 1)
+            addTask();
+        else if (userChoice == 2)
+            removeTask();
+        else if (userChoice == 3)
+            DisplayTasks();
+        else
+            cout << "Invalid input!!\n";
+    }
 }

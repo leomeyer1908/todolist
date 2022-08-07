@@ -1,8 +1,11 @@
 #include <iostream>
+#include <string>
+#include "Executive.h"
 
-using namespace std;
+int main()
+{
+    Executive exec;
 
-int main() {
-
+    exec.run();
     return 0;
 }

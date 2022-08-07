@@ -10,15 +10,15 @@ class LinkedList
 {
 private:
     Node<T> *m_head;
-    int m_lenght;
 
 public:
+    int m_lenght;
     LinkedList();
     ~LinkedList();
     void insert(int index, T entry);
     void remove(int index);
     void replace(int index, T entry);
     T getEntry(int index);
-    void clear()
+    void clear();
 };
 #endif

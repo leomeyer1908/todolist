@@ -81,7 +81,7 @@ void LinkedList<T>::replace(int index, T entry)
     Node<T> *temp = m_head;
 
     if (index < 1 || index > m_length + 1)
-        throw(runtime_error("Cannot remove; invalid index\n"));
+        throw(runtime_error("Cannot Replace; invalid index\n"));
     else
     {
         for (int i = 0; i < index; i++)
@@ -89,4 +89,25 @@ void LinkedList<T>::replace(int index, T entry)
 
         temp->setEntry(entry);
     }
+}
+
+template <typename T>
+void LinkedList<T>::getEntry(int index)
+{
+    if (index < 1 || index > m_length + 1)
+        throw(runtime_error("Error!; invalid index\n"));
+    else
+    {
+        for (int i = 0; i < index; i++)
+            temp = temp->getNext();
+
+        temp->getEntry();
+    }
+}
+
+template <typename T>
+void LinkedList<T>::clear()
+{
+    while (m_length != 0)
+        remove(1);
 }

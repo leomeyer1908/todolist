@@ -19,7 +19,7 @@ public:
 
     T getEntry();
 
-    void setEntry(entry);
+    void setEntry(T entry);
 
     Node<T> *getNext();
 

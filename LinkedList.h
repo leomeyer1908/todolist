@@ -1,6 +1,7 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 #include <iostream>
+#include <string>
 #include "Node.h"
 
 using namespace std;
@@ -12,7 +13,7 @@ private:
     Node<T> *m_head;
 
 public:
-    int m_lenght;
+    int m_length;
     LinkedList();
     ~LinkedList();
     void insert(int index, T entry);
@@ -21,4 +22,6 @@ public:
     T getEntry(int index);
     void clear();
 };
+
+
 #endif

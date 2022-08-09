@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Sat Aug  6 19:00:13 2022
+# Make data base, printed on Tue Aug  9 11:11:59 2022
  
 
 # Variables
@@ -96,7 +96,7 @@ MAKE_VERSION := 3.81
 # environment
 USER = leo
 # makefile
-.DEFAULT_GOAL := HelloWorld
+.DEFAULT_GOAL := prog
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -158,7 +158,6 @@ VSCODE_PID = 16630
 # environment
 _CE_CONDA = 
 # variable set hash-table stats:
- 
 # Load=71/1024=7%, Rehash=0, Collisions=1/94=1%
 
 # Pattern-specific Variable Values
@@ -167,15 +166,23 @@ _CE_CONDA =
 
 # Directories
 
-# . (device 16777231, inode 19911680): 13 files, no impossibilities.
+# . (device 16777231, inode 19911680): 17 files, no impossibilities.
 
-# 13 files, no impossibilities in 1 directories.
+# 17 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
 # No implicit rules.
 
 # Files
+
+Executive.o: Executive.cpp Executive.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `makefile', line 8):
+	g++ -std=c++11 -c Executive.cpp
+	
 
 # Not a target:
 all:
@@ -187,6 +194,18 @@ all:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
+LinkedList.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+LinkedList.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 .SUFFIXES:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -195,22 +214,40 @@ all:
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-06 18:49:22
+#  Last modified 2022-08-09 11:07:53
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-HelloWorld: main.o
+# Not a target:
+main.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+prog: main.o Executive.o LinkedList.o Node.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  commands to execute (from `makefile', line 2):
-	g++ -std=c++11 -g -Wall main.o -o HelloWorld
+	g++ main.o Executive.o LinkedList.o Node.o -o prog
 	
 
 # Not a target:
-main.cpp:
+Node.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Node.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Executive.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -221,12 +258,26 @@ main.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+Executive.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+LinkedList.o: LinkedList.cpp LinkedList.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `makefile', line 11):
+	g++ -std=c++11 -c LinkedList.cpp
+	
+
 clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `makefile', line 8):
-	rm *.o HelloWorld
+#  commands to execute (from `makefile', line 17):
+	rm -f *.o prog
 	
 
 main.o: main.cpp
@@ -234,11 +285,19 @@ main.o: main.cpp
 #  Modification time never checked.
 #  File has not been updated.
 #  commands to execute (from `makefile', line 5):
-	g++ -std=c++11 -g -Wall -c main.cpp
+	g++ -std=c++11 -c main.cpp
+	
+
+Node.o: Node.cpp Node.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `makefile', line 14):
+	g++ -std=c++11 -c Node.cpp
 	
 
 # files hash-table stats:
-# Load=8/1024=1%, Rehash=0, Collisions=0/22=0%
+# Load=17/1024=2%, Rehash=0, Collisions=0/40=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -250,6 +309,6 @@ main.o: main.cpp
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sat Aug  6 19:00:13 2022
+# Finished Make data base on Tue Aug  9 11:11:59 2022
 
  

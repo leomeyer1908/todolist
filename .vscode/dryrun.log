@@ -1,7 +1,5 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/leo/Documents/todolist'
-g++ -std=c++11 -g -Wall -c main.cpp
-g++ -std=c++11 -g -Wall main.o -o HelloWorld
- 
+g++ main.o Executive.o LinkedList.o Node.o -o prog
 make: Leaving directory `/Users/leo/Documents/todolist'
  

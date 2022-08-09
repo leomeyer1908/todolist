@@ -40,7 +40,7 @@ void Executive::removeTask()
 
 void Executive::DisplayTasks()
 {
-    for (int i = 0; i < list.m_lenght; i++)
+    for (int i = 0; i < list.m_length; i++)
     {
         cout << list.getEntry(i) << endl;
     }

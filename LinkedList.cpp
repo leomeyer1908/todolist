@@ -8,7 +8,7 @@ template <typename T>
 LinkedList<T>::LinkedList()
 {
     m_head = nullptr;
-    m_lenght = 0;
+    m_length = 0;
 }
 
 template <typename T>
@@ -30,7 +30,7 @@ void LinkedList<T>::insert(int index, T entry)
         temp->setNext(nullptr);
         m_head = temp;
 
-        m_lenght++;
+        m_length++;
     }
 
     else
@@ -43,7 +43,7 @@ void LinkedList<T>::insert(int index, T entry)
         temp2->setNext(temp2->getNext());
         temp->setNext(temp2);
 
-        m_lenght++;
+        m_length++;
     }
 }
 
@@ -59,7 +59,7 @@ void LinkedList<T>::remove(int index)
     {
         m_head->setNext(m_head->getNext());
         delete temp->getNext();
-        m_lenght--;
+        m_length--;
     }
 
     else
@@ -71,7 +71,7 @@ void LinkedList<T>::remove(int index)
         temp2 = temp2->getNext();
         delete temp->getNext();
         temp->setNext(temp2->getNext());
-        m_lenght--;
+        m_length--;
     }
 }
 
@@ -92,16 +92,17 @@ void LinkedList<T>::replace(int index, T entry)
 }
 
 template <typename T>
-void LinkedList<T>::getEntry(int index)
+T LinkedList<T>::getEntry(int index)
 {
     if (index < 1 || index > m_length + 1)
         throw(runtime_error("Error!; invalid index\n"));
     else
     {
+        T temp = m_head;
         for (int i = 0; i < index; i++)
             temp = temp->getNext();
 
-        temp->getEntry();
+        return temp.m_entry;
     }
 }
 
@@ -111,3 +112,5 @@ void LinkedList<T>::clear()
     while (m_length != 0)
         remove(1);
 }
+
+template class LinkedList<string>;

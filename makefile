@@ -1,8 +1,17 @@
-prog: main.o Executive.o
-	g++ -std=c++11 -g -Wall main.o Executive.o -o prog
-main.o: main.cpp LinkedList.h LinkedList.cpp Node.h Node.cpp
-	g++ -g -std=c++11 -g -Wall -c main.cpp
-Executive.o: Executive.cpp Executive.h
-	g++ -g -std=c++11 -g -Wall -c Executive.cpp
+prog: main.o executive.o linkedlist.o node.o
+	g++ main.o executive.o linkedlist.o node.o -o prog
+
+main.o: main.cpp
+	g++ -std=c++11 -c main.cpp
+
+executive.o: Executive.cpp Executive.h
+	g++ -std=c++11 -c Executive.cpp
+
+linkedlist.o: LinkedList.cpp LinkedList.h
+	g++ -std=c++11 -c LinkedList.cpp
+
+node.o: Node.cpp Node.h
+ g++ -std=c++11 -c Node.cpp
+
 clean:
 	rm *.o prog

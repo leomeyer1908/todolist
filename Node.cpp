@@ -8,6 +8,11 @@ Node<T>::Node(T entry)
 }
 
 template <typename T>
+Node<T>::~Node()
+{
+}
+
+template <typename T>
 T Node<T>::getEntry()
 {
     return (m_entry);
@@ -30,3 +35,7 @@ void Node<T>::setNext(Node<T> *next)
 {
     m_next = next;
 }
+
+template class Node<string>;
+template class Node<int>;
+template class Node<char>;

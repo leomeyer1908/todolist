@@ -1,5 +1,3 @@
-#include <iostream>
-#include <string>
 #include "Executive.h"
 
 using namespace std;
@@ -25,7 +23,7 @@ void Executive::addTask()
     cout << "Task : ";
     cin >> task; // user inputs a task
 
-    list.insert(1, task); // it gets added to the linkedlist
+    list.insert(list.getLength(), task); // it gets added to the linkedlist
 }
 
 void Executive::removeTask()
@@ -40,7 +38,7 @@ void Executive::removeTask()
 
 void Executive::DisplayTasks()
 {
-    for (int i = 0; i < list.m_length; i++)
+    for (int i = 0; i < list.getLength(); i++)
     {
         cout << list.getEntry(i) << endl;
     }

@@ -21,7 +21,7 @@ public:
     void replace(int index, T entry);
     T getEntry(int index);
     void clear();
+    int getLength();
 };
-
 
 #endif

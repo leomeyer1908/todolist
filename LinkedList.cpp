@@ -27,9 +27,8 @@ void LinkedList<T>::insert(int index, T entry)
     else if (index == 0)
     {
         Node<T> *temp = new Node<T>(entry);
-        temp->setNext(nullptr);
+        temp->setNext(m_head);
         m_head = temp;
-
         m_length++;
     }
 
@@ -40,7 +39,7 @@ void LinkedList<T>::insert(int index, T entry)
             temp = temp->getNext();
 
         Node<T> *temp2 = new Node<T>(entry);
-        temp2->setNext(temp2->getNext());
+        temp2->setNext(temp->getNext());
         temp->setNext(temp2);
 
         m_length++;
@@ -52,13 +51,13 @@ void LinkedList<T>::remove(int index)
 {
     Node<T> *temp = m_head;
 
-    if (index < 0 || index > m_length)
+    if (index < 0 || index >= m_length)
         throw(runtime_error("Cannot remove; invalid index\n"));
 
     else if (index == 0)
     {
-        m_head->setNext(m_head->getNext());
-        delete temp->getNext();
+        m_head = m_head->getNext();
+        delete temp;
         m_length--;
     }
 
@@ -66,11 +65,10 @@ void LinkedList<T>::remove(int index)
     {
         for (int i = 0; i < index - 1; i++)
             temp = temp->getNext();
-
         Node<T> *temp2 = temp->getNext();
         temp2 = temp2->getNext();
-        delete temp->getNext();
-        temp->setNext(temp2->getNext());
+        delete temp->getNext(); //this deletes temp getNext but now tempNext has changed to be the next next
+        temp->setNext(temp2);
         m_length--;
     }
 }

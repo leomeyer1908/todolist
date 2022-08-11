@@ -15,8 +15,6 @@ private:
 public:
     Node(T entry);
 
-    ~Node();
-
     T getEntry();
 
     void setEntry(T entry);

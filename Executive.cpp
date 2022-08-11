@@ -11,10 +11,13 @@ Executive::~Executive()
     list.clear();
 }
 
-void Executive::menue()
+void Executive::menu()
 {
-    cout << "TO DO LIST \n";
-    cout << "1)Add a Task \n2)Remove Task\n3)Display Tasks\n4) Exit\n";
+    cout << "Todo List Menu\n";
+    cout << "1) Add a Task \n";
+    cout << "2) Remove Task\n";
+    cout << "3) Display Tasks\n";
+    cout << "4) Exit\n";
 }
 
 void Executive::addTask()
@@ -47,10 +50,9 @@ void Executive::DisplayTasks()
 void Executive::run()
 {
     int userChoice = 0;
-    menue();
-
     while (userChoice != 4)
     {
+        menu();
         cout << "Enter a Choice: ";
         cin >> userChoice;
         if (userChoice == 1)

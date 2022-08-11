@@ -12,7 +12,7 @@ private:
 public:
     Executive();
     ~Executive();
-    void menue();
+    void menu();
     void addTask();
     void removeTask();
     void DisplayTasks();

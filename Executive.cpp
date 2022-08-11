@@ -23,7 +23,7 @@ void Executive::menu()
 void Executive::addTask()
 {
     string task;
-    cout << "Task : ";
+    cout << "Task: ";
     cin >> task; // user inputs a task
 
     list.insert(list.getLength(), task); // it gets added to the linkedlist
@@ -31,19 +31,20 @@ void Executive::addTask()
 
 void Executive::removeTask()
 {
-    DisplayTasks(); // it shows all the tasks
+    displayTasks(); // it shows all the tasks
     int index;
-    cout << "Enter index: ";
+    cout << "Enter task index to remove: ";
     cin >> index;
 
-    list.remove(index);
+    list.remove(index-1);
 }
 
-void Executive::DisplayTasks()
+void Executive::displayTasks()
 {
+    cout << "Tasks:\n";
     for (int i = 0; i < list.getLength(); i++)
     {
-        cout << list.getEntry(i) << endl;
+        cout << i+1 << ". " << list.getEntry(i) << endl;
     }
 }
 
@@ -60,8 +61,8 @@ void Executive::run()
         else if (userChoice == 2)
             removeTask();
         else if (userChoice == 3)
-            DisplayTasks();
+            displayTasks();
         else
-            cout << "Invalid input!!\n";
+            cout << "Invalid input!\n";
     }
 }

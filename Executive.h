@@ -15,6 +15,6 @@ public:
     void menu();
     void addTask();
     void removeTask();
-    void DisplayTasks();
+    void displayTasks();
     void run();
 };

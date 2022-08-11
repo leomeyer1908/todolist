@@ -14,7 +14,7 @@ Executive::~Executive()
 void Executive::menue()
 {
     cout << "TO DO LIST \n";
-    cout << "1)Add a Task \n2)Remove Task\n3)Display Tasks\n Exit\n";
+    cout << "1)Add a Task \n2)Remove Task\n3)Display Tasks\n4) Exit\n";
 }
 
 void Executive::addTask()
@@ -29,7 +29,7 @@ void Executive::addTask()
 void Executive::removeTask()
 {
     DisplayTasks(); // it shows all the tasks
-    int index = 0;
+    int index;
     cout << "Enter index: ";
     cin >> index;
 

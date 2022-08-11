@@ -8,11 +8,6 @@ Node<T>::Node(T entry)
 }
 
 template <typename T>
-Node<T>::~Node()
-{
-}
-
-template <typename T>
 T Node<T>::getEntry()
 {
     return (m_entry);
